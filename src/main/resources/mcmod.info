@@ -1,0 +1,16 @@
+[
+{
+  "modid": "acrossdimensions",
+  "name": "Across Dimensions",
+  "description": "A mod with dimensions and more dimensions within them.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Kneelawk", "Meelock"],
+  "credits": "Kneelawk, for making the code and Meelock, for making the textures.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
