@@ -6,6 +6,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent
 import cpw.mods.fml.common.event.FMLPostInitializationEvent
 import cpw.mods.fml.common.event.FMLPreInitializationEvent
 import cpw.mods.fml.common.SidedProxy
+import com.kneelawk.acrossdimensions.log.ADLog
 
 @Mod(modid = com.kneelawk.acrossdimensions.ref.ModRef.MODID, modLanguage = "scala")
 object AcrossDimensions {
@@ -15,16 +16,17 @@ object AcrossDimensions {
 
 	@Mod.EventHandler
 	def preInit(event: FMLPreInitializationEvent) {
-		proxy.preInit
+		ADLog.init(event.getModLog)
+		proxy.preInit(event)
 	}
 
 	@Mod.EventHandler
 	def init(event: FMLInitializationEvent) {
-		proxy.init
+		proxy.init(event)
 	}
 
 	@Mod.EventHandler
 	def postInit(event: FMLPostInitializationEvent) {
-		proxy.postInit
+		proxy.postInit(event)
 	}
 }
