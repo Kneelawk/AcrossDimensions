@@ -1,8 +1,8 @@
-package com.kneelawk.acrossdimensions.world.gen
+package com.kneelawk.acrossdimensions.dimensions.overworld.gen
 
 import java.util.Random
 
-import com.kneelawk.acrossdimensions.world.gen.structure.MapGenControl
+import com.kneelawk.acrossdimensions.dimensions.overworld.gen.structure.MapGenControl
 
 import cpw.mods.fml.common.IWorldGenerator
 import net.minecraft.block.Block
@@ -15,13 +15,17 @@ class WorldGenADStructure extends IWorldGenerator {
 		var structures = MapGenControl.structureList.iterator
 		while (structures.hasNext) {
 			val struct = structures.next
-			struct.func_151539_a(chunkProvider, world, x, z, null.asInstanceOf[Array[Block]])
+			val isStruct = MapGenControl.isStructureMap.get(struct)
+			if ((isStruct && world.getWorldInfo.isMapFeaturesEnabled()) || !isStruct)
+				struct.func_151539_a(chunkProvider, world, x, z, null.asInstanceOf[Array[Block]])
 		}
 
 		structures = MapGenControl.structureList.iterator
 		while (structures.hasNext) {
 			val struct = structures.next
-			struct.generateStructuresInChunk(world, rand, x, z)
+			val isStruct = MapGenControl.isStructureMap.get(struct)
+			if ((isStruct && world.getWorldInfo.isMapFeaturesEnabled()) || !isStruct)
+				struct.generateStructuresInChunk(world, rand, x, z)
 		}
 	}
 }

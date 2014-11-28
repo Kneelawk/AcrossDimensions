@@ -1,4 +1,4 @@
-package com.kneelawk.acrossdimensions.world.gen.structure.ironstronghold;
+package com.kneelawk.acrossdimensions.dimensions.overworld.gen.structure.ironmine;
 
 import static net.minecraftforge.common.ChestGenHooks.MINESHAFT_CORRIDOR;
 

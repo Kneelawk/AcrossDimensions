@@ -1,4 +1,4 @@
-package com.kneelawk.acrossdimensions.world.gen.structure.ironstronghold;
+package com.kneelawk.acrossdimensions.dimensions.overworld.gen.structure.ironmine;
 
 import java.util.Iterator;
 import java.util.Map;
